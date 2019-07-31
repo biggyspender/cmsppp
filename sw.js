@@ -8,7 +8,7 @@ self.addEventListener('install', function(event) {
 
 
 self.addEventListener("fetch", function(event) {
-  console.log(event);
+  console.log(JSON.stringify(event,null,2));
   event.respondWith(
     fetch(event.request)
     //   caches.match(event.request)
