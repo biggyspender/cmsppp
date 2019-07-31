@@ -1,8 +1,29 @@
 <html>
-    <head>
-
-    </head>
-    <body>
-        <video src="trailer.mp4"></video>
-    </body>
+  <head>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+          navigator.serviceWorker.register("/sw.js").then(
+            function(registration) {
+              // Registration was successful
+              console.log(
+                "ServiceWorker registration successful with scope: ",
+                registration.scope
+              );
+              document
+                .querySelector("video")
+                .setAttribute("src", "trailer.mp4");
+            },
+            function(err) {
+              // registration failed :(
+              console.log("ServiceWorker registration failed: ", err);
+            }
+          );
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <video></video>
+  </body>
 </html>
