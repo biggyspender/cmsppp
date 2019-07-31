@@ -1,3 +1,12 @@
+self.addEventListener('install', function(event) {
+    // Perform install steps
+    event.waitUntil(
+      Promise.resolve()
+    );
+  });
+
+
+
 self.addEventListener("fetch", function(event) {
   console.log("woo", event);
   event.respondWith(
