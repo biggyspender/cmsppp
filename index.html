@@ -10,9 +10,11 @@
                 "ServiceWorker registration successful with scope: ",
                 registration.scope
               );
-              document
-                .querySelector("video")
-                .setAttribute("src", "trailer.mp4");
+              setTimeout(() => {
+                document
+                  .querySelector("video")
+                  .setAttribute("src", "trailer.mp4");
+              }, 10000);
             },
             function(err) {
               // registration failed :(
