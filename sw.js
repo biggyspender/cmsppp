@@ -5,13 +5,16 @@ self.addEventListener("install", function(event) {
 
 self.addEventListener("fetch", function(event) {
   console.log("intercepted");
-  let req =
-    event.request.url === "https://biggyspender.github.io/cmsppp/trailer1.mp4"
-      ? {
-          ...event.request,
-          url: "https://biggyspender.github.io/cmsppp/trailer.mp4"
-        }
-      : event.request;
+  if(event.request.url === "https://biggyspender.github.io/cmsppp/trailer1.mp4"){
+      event.request.url="https://biggyspender.github.io/cmsppp/trailer.mp4"
+  }
+//   let req =
+//     event.request.url === "https://biggyspender.github.io/cmsppp/trailer1.mp4"
+//       ? {
+//           ...event.request,
+//           url: "https://biggyspender.github.io/cmsppp/trailer.mp4"
+//         }
+//       : event.request;
   event.respondWith(
     fetch(req)
     //   caches.match(event.request)
