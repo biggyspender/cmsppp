@@ -1,8 +1,10 @@
 self.addEventListener("install", function(event) {
   // Perform install steps
-  event.waitUntil(Promise.resolve()).then(() => {
-    console.log("I am finished installing");
-  });
+  event.waitUntil(
+    Promise.resolve().then(() => {
+      console.log("I am finished installing");
+    })
+  );
 });
 
 self.addEventListener("fetch", function(event) {
