@@ -8,7 +8,7 @@ self.addEventListener("install", function(event) {
 });
 
 self.addEventListener("fetch", function(event) {
-  console.log("intercepted");
+  console.log("interchepted");
   //   if(event.request.url === "https://biggyspender.github.io/cmsppp/trailer1.mp4"){
   //       event.request.url="https://biggyspender.github.io/cmsppp/trailer.mp4"
   //   }
